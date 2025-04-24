@@ -14144,3 +14144,14 @@ textarea.form-control {
   margin-top: 10px;
   padding: 10px;
 }
+
+
+.responsive-number {
+  font-size: 35px;
+}
+
+@media (max-width: 575.98px) { /* For extra small devices */
+  .responsive-number {
+    font-size: 30px;
+  }
+}
