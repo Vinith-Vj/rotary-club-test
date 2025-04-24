@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home | Rotary Club
+{% endblock %}
+{% block main %}
+
+{% for c in cover %}
+<div class="hero-wrap js-fullheight" style="background-image: url('{{ c.image.url }}');"
+	data-stellar-background-ratio="0.4">
+	<div class="overlay"></div>
+	<div class="container-fluid px-md-5">
+		<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
+			data-scrollax-parent="true">
+			<div class="col-md-6 ftco-animate">
+				<h2 class="subheading">ROTARY CLUB</h2>
+				<h1 class="mb-4" id="headBanner"><span> Diverse</span> hearts,<br>Unified in <span>compassion</span>.
+				</h1>
+				<div>
+					<a href="{% url 'rotaryapp:joinus' %}" class="btn btn-primary" id="join">Membership Form</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endfor %}
+
+<section class="ftco-section ftco-no-pb ftco-no-pt services-section">
+	<div class="container-fluid px-md-5 py-3" id="boxOverlay">
+		<div class="row py-4 d-flex">
+			<div class="col-md-3 services align-self-stretch ftco-animate">
+				<div class="media-body">
+					<span class="num">01</span>
+					<h3 class="heading mb-3"><a href="#">PROMOTING PEACE</a></h3>
+					<p>As a humanitarian organization, peace is a cornerstone of our mission.</p>
+				</div>
+			</div>
+			<div class="col-md-3 services align-self-stretch ftco-animate">
+				<div class="media-body">
+					<span class="num">02</span>
+					<h3 class="heading mb-3"><a href="#">SUPPORTING EDUCATION</a></h3>
+					<p>We support education for all children and literacy for children and adults.</p>
+				</div>
+			</div>
+			<div class="col-md-3 services align-self-stretch ftco-animate">
+				<div class="media-body">
+					<span class="num">03</span>
+					<h3 class="heading mb-3"><a href="#">GROWING LOCAL ECONOMIES</a></h3>
+					<p>Rotary members train people to become resources for their community.</p>
+				</div>
+			</div>
+			<div class="col-md-3 services align-self-stretch ftco-animate">
+				<div class="media-body">
+					<span class="num">04</span>
+					<h3 class="heading mb-3"><a href="#">FIGHTING DISEASES</a></h3>
+					<p>Our members have hundreds of health projects underway around the world</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<br>
+<section class="ftco-section ftco-no-pt ftco-no-pb fade-up">
+	<div class="container fade-up">
+		<div class="row d-flex fade-up">
+			<div class="col-md-6 d-flex fade-up">
+				<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end fade-up"
+					style="background-image:url('static/images/rotary.png');">
+					<div>
+						<a href="https://www.youtube.com/watch?v=coqag4TufB0"
+							class="icon-video popup-vimeo d-flex justify-content-center align-items-center fade-up">
+							<span class="icon-play"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 px-sm-5 py-sm-5 fade-up">
+				<div class="row justify-content-start pt-3 pb-3 fade-up">
+					<div class="col-md-12 heading-section ftco-animate fade-up">
+						<span class="subheading fade-up">Welcome to Rotary Club</span>
+						<h2 class="mb-4 fade-up">Where every hand extends hope and every heart embraces change.</h2>
+						<p style="display: flex;text-align: justify;">Welcome to the Rotary Club of Thangasseri, a
+							vibrant community dedicated to service above
+							self. Our club, located in the historic coastal town of Thangasseri, brings together
+							professionals and community leaders committed to making a positive impact locally and
+							globally. Through various projects and initiatives, we aim to address pressing issues such
+							as education, healthcare, environmental sustainability, and community development. Join us
+							in our mission to create lasting change and foster goodwill. Together, we can build a better
+							future for all.</p>
+						<div class="years d-flex fade-up">
+							<h4 class="number mr-2" style="font-weight: bolder; font-size: 35px;" data-number="23">
+								<strong>0</strong>
+							</h4>
+							<h4 style="font-weight: bolder; font-size: 35px;">Years of Experience</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<br>
+
+<section class="ftco-consultation img fade-up">
+	<div class="container d-flex align-items-center fade-up">
+		<div class="content col-md-6 fade-up">
+			<div class="overlay" style="background-color: rgba(242, 234, 234, 0.863)"></div>
+			<div class="p-3 p-md-5 ftco-animate heading-section fade-up">
+				<span class="subheading fade-up">Booking a meeting</span>
+				<h2 class="mb-4 fade-up" style="color: black;">CONTACT US</h2>
+				<form action="" method="post" class="consultation fade-up">
+				<!--	{% csrf_token %}-->
+					<div class="form-group fade-up">
+						<label for="name">YOUR NAME :</label>
+						<input type="text" class="form-control fade-up" placeholder="Enter your name" name="name"
+							required>
+					</div>
+					<div class="form-group fade-up">
+						<label for="email">YOUR EMAIL :</label>
+						<input type="email" class="form-control fade-up" placeholder="Enter your email" name="email"
+							required>
+					</div>
+					<div class="form-group fade-up">
+						<label for="phone">CONTACT NUMBER :</label>
+						<input type="text" class="form-control fade-up" placeholder="Enter your phone number"
+							name="phone" required>
+					</div>
+					<div class="form-group fade-up">
+						<label for="sub">SUBJECT :</label>
+						<input type="text" class="form-control fade-up" placeholder="Enter the subject" name="sub"
+							required>
+					</div>
+					<div class="form-group fade-up">
+						<label for="msg">MESSAGE :</label>
+						<input name="msg" cols="30" rows="3" class="form-control fade-up"
+							placeholder="Enter the message here" required></input>
+					</div>
+					<br>
+					<div class="form-group fade-up">
+						<button type="submit" class="btn btn-primary py-3 px-4 fade-up">SUBMIT</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="contactImg col-md-6 fade-up">
+			<img src="{% static 'images/home_contact.jpg' %}" alt="contact image" style="height: 840px;"
+				class="img-fluid fade-up">
+		</div>
+	</div>
+</section>
+
+<section class="fade-up">
+	<div class="container d-flex flex-column flex-md-row align-items-center justify-content-between fade-up py-5">
+		<!-- Left Container for Image -->
+		<div class="col-md-6 col-sm-12 mb-3">
+			<img src="https://www.rotary3211.org/img/projects/projects24_1.jpg" alt="Image Description" class="img-fluid">
+		</div>
+
+		<!-- Right Container for Text and Button -->
+		<div class="col-md-6 col-sm-12" style="background-color: rgba(130, 255, 255, 0.503); padding: 30px;">
+			<h2 class="section-title">UYARE</h2>
+             <h2 class="title">skill up, fly high</h2>
+			<p class="section-description">"Uyare - Skill Up, Fly High" is a district initiative for 2024-2025 aimed at empowering students with essential skills for the future. This project focuses on enhancing vocational and technical skills, providing training and workshops in various fields, and equipping students with the tools needed for career success and personal growth.</p>
+			<a href="/uyare/" class="btn btn-primary">Register here</a>
+		</div>
+	</div>
+</section>
+
+<br>
+<br>
+
+<section class="ftco-section testimony-section ftco-no-pt fade-up mb-6">
+	<div class="container fade-up">
+		<div class="row justify-content-center mb-5 fade-up">
+			<div class="col-md-7 text-center heading-section ftco-animate fade-up">
+				<span class="subheading fade-up">Testimonial</span>
+				<h2 class="mb-4 fade-up">Happy Members</h2>
+			</div>
+		</div>
+		<div class="row ftco-animate fade-up">
+			<div class="col-md-12 fade-up">
+				<div class="carousel-testimony owl-carousel ftco-owl fade-up">
+					<div class="item fade-up">
+						<div class="testimony-wrap py-4 fade-up">
+							<div class="text fade-up">
+								<p class="mb-4 fade-up" style="display: flex; text-align: justify;">"Joining the Rotary
+									Club of
+									Tangasseri has been one of the most rewarding experiences of my life. The club's
+									commitment to community service has made a real difference in our local area.
+									Together, we’ve organized health camps and education initiatives that have
+									transformed lives. I’m proud to be a part of such a dedicated group!"</p>
+								<div class="d-flex align-items-center fade-up">
+									<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+									<div class="pl-3 fade-up">
+										<p class="name fade-up">Rtn. Binoy</p>
+										<span class="position fade-up"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item fade-up">
+						<div class="testimony-wrap py-4 fade-up">
+							<div class="text fade-up">
+								<p class="mb-4 fade-up" style="display: flex; text-align: justify;">"As a new business
+									owner, I
+									found invaluable networking opportunities through the Rotary Club of Tangasseri. The
+									connections I’ve made with fellow members have not only helped my business grow but
+									have also fostered lasting friendships. It's a supportive community that truly cares
+									about its members."</p>
+								<div class="d-flex align-items-center fade-up">
+									<div class="user-img fade-up" style="background-image: url(images/person_2.jpg)">
+									</div>
+									<div class="pl-3 fade-up">
+										<p class="name fade-up">Rtn. Joji</p>
+										<span class="position fade-up"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item fade-up">
+						<div class="testimony-wrap py-4 fade-up">
+							<div class="text fade-up">
+								<p class="mb-4 fade-up" style="display: flex; text-align: justify;">"Rotary Club of
+									Tangasseri
+									has played a crucial role in my personal and professional development. The
+									leadership opportunities and workshops offered have equipped me with skills that I
+									use every day. I’m grateful for the mentorship and encouragement I’ve received from
+									experienced members."</p>
+								<div class="d-flex align-items-center fade-up">
+									<div class="user-img fade-up" style="background-image: url(images/person_3.jpg)">
+									</div>
+									<div class="pl-3 fade-up">
+										<p class="name fade-up">Rtn. Ganesh</p>
+										<span class="position fade-up"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item fade-up">
+						<div class="testimony-wrap py-4 fade-up">
+							<div class="text fade-up">
+								<p class="mb-4 fade-up" style="display: flex; text-align: justify;">"Being part of the
+									Rotary
+									Club of Tangasseri has opened my eyes to different cultures and perspectives. The
+									international projects we undertake allow us to connect with people around the
+									world, fostering understanding and cooperation. It’s a beautiful reminder of our
+									shared humanity."</p>
+								<div class="d-flex align-items-center fade-up">
+									<div class="user-img fade-up" style="background-image: url(images/person_1.jpg)">
+									</div>
+									<div class="pl-3 fade-up">
+										<p class="name fade-up">Rtn. Chacko</p>
+										<span class="position fade-up"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item fade-up">
+						<div class="testimony-wrap py-4 fade-up">
+							<div class="text fade-up">
+								<p class="mb-4 fade-up" style="display: flex; text-align: justify;">"The Rotary Club of
+									Tangasseri's focus on youth programs is truly inspiring. Through initiatives like
+									scholarships and mentorship, we’re empowering the next generation to achieve their
+									dreams. It’s rewarding to see young people grow and thrive, knowing we played a part
+									in their journey."</p>
+								<div class="d-flex align-items-center fade-up">
+									<div class="user-img fade-up" style="background-image: url(images/person_2.jpg)">
+									</div>
+									<div class="pl-3 fade-up">
+										<p class="name fade-up">Rtn. Rajesh</p>
+										<span class="position fade-up"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}

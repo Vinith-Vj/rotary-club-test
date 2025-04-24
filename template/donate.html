@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Donate form | Rotary Club
+{% endblock %}
+{% block main %}
+<section class="hero-wrap hero-wrap-8" style="background-image: url('static/images/2149377743.jpg'); height: 200px;"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+        </div>
+    </div>
+</section>
+<br>
+<div class="container fade-up">
+    <div class="row justify-content-center fade-up">
+        <div class="col-md-8 fade-up">
+            <div class="form-container bg-light p-5 fade-up">
+                <h3 class="text-center mb-4 fade-up" style="font-size: 40px;">SPONSORSHIP FORM</h3>
+                <br>
+                
+                <!-- Display messages -->
+                {% if messages %}
+                    <div class="alert alert-info">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <!--<form action="/sponsor_now/" method="post">-->
+                <!--    {% csrf_token %}-->
+                    <div class="form-group row">
+                        <label for="orgname" class="col-sm-4 col-form-label text-right">Name of the group or
+                            organization*</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="orgname" name="orgname"
+                                placeholder="Enter your Organization name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="contactname" class="col-sm-4 col-form-label text-right">Contact Name :</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="contactname" name="contactname"
+                                placeholder="Enter your Contact name" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-4 col-form-label text-right">Email :</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Enter your email address" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="address" class="col-sm-4 col-form-label text-right">Address :</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="address" name="address"
+                                placeholder="Enter your Address">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="city" class="col-sm-4 col-form-label text-right"></label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="city" name="city" placeholder="Enter your City">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="country" class="col-sm-4 col-form-label text-right"></label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="country" name="country"
+                                placeholder="Enter your Country" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="amount" class="col-sm-4 col-form-label text-right">Amount you wish to Donate
+                            (optional) :</label>
+                        <div class="col-sm-8">
+                            <input type="" class="form-control" id="amount" name="amount" placeholder="INR">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary" style="padding: 20px 30px;">Sponsor now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<style>
+    body {
+        background-color: rgba(211, 240, 255, 0.789);
+    }
+</style>
+{% endblock %}

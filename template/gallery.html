@@ -1,0 +1,456 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Gallery | Rotary Club
+{% endblock %}
+
+{% block main %}
+<!-- Hero Section with background image -->
+<section class="hero-wrap hero-wrap-8"
+  style="background-image: url('static/images/old/shutterstock_418767232.jpg'); height: 400px;"
+  data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+<!-- Gallery Section -->
+<div class="container-fluid fade-up">
+  <h1 class="mb-3 bread text-center fade-up">Gallery</h1>
+  <br>
+  <div class="row justify-content-center fade-up">
+    <!-- Onam Gallery Card -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('onam')">
+        <img src="{% static 'images/onam1.jfif' %}" class="card-img-top" alt="Onam Event">
+        <div class="text-overlay">
+          <h5 class="text-white">ONAM 2024</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Christmas Gallery Card -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('christmas')">
+        <img src="{% static 'images/christmas2.jfif' %}" class="card-img-top" alt="Christmas Event">
+        <div class="text-overlay">
+          <h5 class="text-white">CHRISTMAS 2023</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chess Gallery Card -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('chess')">
+        <img src="{% static 'images/chess2.jfif' %}" class="card-img-top" alt="Chess Tournament">
+        <div class="text-overlay">
+          <h5 class="text-white">CHESS COMPETITION 2024</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Event Cards -->
+    <!-- Badminton Tournament -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('badminton')">
+        <img src="{% static 'images/badminton2.jpeg' %}" class="card-img-top" alt="Badminton Tournament">
+        <div class="text-overlay">
+          <h5 class="text-white">BADMINTON TOURNAMENT 2024</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cricket Tournament -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('cricket')">
+        <img src="{% static 'images/cricket1.jpeg' %}" class="card-img-top" alt="Cricket Tournament">
+        <div class="text-overlay">
+          <h5 class="text-white">CRICKET TOURNAMENT 2024</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Football Tournament -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('football')">
+        <img src="{% static 'images/football1.jpeg' %}" class="card-img-top" alt="Football Tournament">
+        <div class="text-overlay">
+          <h5 class="text-white">FOOTBALL TOURNAMENT 2024</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Independence Day Celebration -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('independence')">
+        <img src="{% static 'images/independence3.jpeg' %}" class="card-img-top" alt="Independence Day Celebration">
+        <div class="text-overlay">
+          <h5 class="text-white">INDEPENDENCE DAY CELEBRATION</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Award Sessions -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('award')">
+        <img src="{% static 'images/award1.jpeg' %}" class="card-img-top" alt="District Award">
+        <div class="text-overlay">
+          <h5 class="text-white">DISTRICT AWARD 2022 - 2024</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- First Zonal Cabinet Session -->
+    <div class="col-md-4 col-sm-6 mb-4 fade-up">
+      <div class="gallery-card h-100" onclick="showGalleryModal('zonal')">
+        <img src="{% static 'images/zonal1.jpeg' %}" class="card-img-top" alt="Zonal Cabinet Session">
+        <div class="text-overlay">
+          <h5 class="text-white">FIRST ZONAL CABINET SESSION</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Event Image Gallery (Onam / Christmas / Chess / etc.) -->
+<div class="gallery-modal" id="galleryModal">
+  <div class="modal-content">
+    <div class="close" onclick="closeGalleryModal()"><i class="fa-solid fa-xmark"></i></div>
+    <div class="modal-body">
+      <div class="image-container" id="imageContainer">
+        <!-- Dynamic content will be inserted here based on the clicked event -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Full Image Overlay Section -->
+<div id="fullImageOverlay" class="full-image-overlay" onclick="closeFullImage()">
+  <img id="fullImage" class="full-image" src="" alt="Full Image">
+</div>
+
+<style>
+  /* Dark overlay text styling */
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.32);
+    /* Dark background with opacity */
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .text-overlay h5 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-top: 45%;
+  }
+
+  /* Ensure equal height and width for gallery cards */
+  .gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.406);
+    cursor: pointer;
+    aspect-ratio: 16/9;
+    /* Maintain a square aspect ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-card:hover img {
+    transform: scale(1.1);
+    /* Zoom effect on hover */
+  }
+
+  /* Modal styling */
+  .gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 80%;
+    background: rgba(255, 255, 255, 0.623);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000000;
+  }
+
+  /* Scrollable container */
+  .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  /* Image container layout */
+  .image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Default to 3 images per row */
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* Full Image Overlay */
+  .full-image-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+
+  .full-image {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  /* Scrollbar styling */
+  .modal-body::-webkit-scrollbar {
+    width: 3px;
+    /* Set the width of the scrollbar */
+  }
+
+  .modal-body::-webkit-scrollbar-thumb {
+    background-color: #bababab0;
+    /* Dark grey color for the scrollbar thumb */
+    border-radius: 5px;
+  }
+
+  .modal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Darker grey when the thumb is hovered */
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+
+    /* Adjust image container to 1 image per row on mobile */
+    .image-container {
+      grid-template-columns: 1fr;
+      /* 1 image per row */
+    }
+
+    .image-item img {
+      height: 150px;
+      /* Adjust height of images on mobile */
+    }
+
+    .modal-content {
+      max-width: 95%;
+      /* Make modal content more responsive */
+    }
+  }
+
+  @media (max-width: 500px) {
+
+    /* Further adjust on very small screens */
+    .modal-content {
+      max-width: 90%;
+    }
+
+    .image-item img {
+      height: 120px;
+      /* Reduce image height even more */
+      width: 100%;
+    }
+  }
+
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  // Show the modal and set the image source to the clicked event's gallery
+  function showGalleryModal(eventType) {
+    const modal = document.getElementById('galleryModal');
+    const imageContainer = document.getElementById('imageContainer');
+
+    // Clear the existing content in the container
+    imageContainer.innerHTML = '';
+
+    // Select the appropriate images based on the event
+    let images = [];
+    if (eventType === 'onam') {
+      images = [
+        '{% static "images/onam1.jfif" %}',
+        '{% static "images/onam2.jfif" %}',
+        '{% static "images/onam3.jfif" %}',
+        '{% static "images/onam4.jfif" %}',
+        '{% static "images/onam5.jfif" %}',
+        '{% static "images/onam6.jfif" %}',
+        '{% static "images/onam7.jfif" %}',
+        '{% static "images/onam8.jfif" %}',
+        '{% static "images/onam9.jfif" %}',
+      ];
+    } else if (eventType === 'christmas') {
+      images = [
+        '{% static "images/christmas1.jfif" %}',
+        '{% static "images/christmas2.jfif" %}',
+        '{% static "images/christmas3.jfif" %}',
+        '{% static "images/christmas4.jfif" %}',
+        '{% static "images/christmas5.jfif" %}',
+        '{% static "images/christmas9.jpg" %}',
+        '{% static "images/christmas7.jfif" %}',
+        '{% static "images/christmas8.jpg" %}',
+        '{% static "images/christmas6.jpg" %}',
+      ];
+    } else if (eventType === 'chess') {
+      images = [
+        '{% static "images/chess1.jfif" %}',
+        '{% static "images/chess2.jfif" %}',
+        '{% static "images/chess3.jfif" %}',
+        '{% static "images/chess4.jfif" %}',
+        '{% static "images/chess5.jfif" %}',
+        '{% static "images/chess6.jfif" %}',
+        '{% static "images/chess7.jfif" %}',
+        '{% static "images/chess8.jfif" %}',
+        '{% static "images/chess9.jfif" %}',
+      ];
+    } else if (eventType === 'badminton') {
+      images = [
+        '{% static "images/badminton2.jpeg" %}',
+        '{% static "images/badminton3.jpeg" %}',
+        '{% static "images/badminton444.jpeg" %}',
+        '{% static "images/badminton555.jpeg" %}',
+        '{% static "images/badminton666.jpeg" %}',
+        '{% static "images/badminton133.jpeg" %}',
+      ];
+    } else if (eventType === 'cricket') {
+      images = [
+        '{% static "images/cricket1.jpeg" %}',
+        '{% static "images/cricket2.jpeg" %}',
+        '{% static "images/cricket3.jpeg" %}',
+        '{% static "images/cricket4.jpeg" %}',
+        '{% static "images/cricket5.jpeg" %}',
+        '{% static "images/cricket6.jpeg" %}',
+        '{% static "images/cricket7.jpeg" %}',
+        '{% static "images/cricket8.jpeg" %}',
+        '{% static "images/cricket9.jpeg" %}',
+      ];
+    } else if (eventType === 'football') {
+      images = [
+        '{% static "images/football1.jpeg" %}',
+        '{% static "images/football2.jpeg" %}',
+        '{% static "images/football3.jpeg" %}',
+        '{% static "images/football4.jpeg" %}',
+        '{% static "images/football5.jpeg" %}',
+        '{% static "images/football6.jpeg" %}',
+      ];
+    } else if (eventType === 'independence') {
+      images = [
+        '{% static "images/independence1.jpeg" %}',
+        '{% static "images/independence2.jpeg" %}',
+        '{% static "images/independence3.jpeg" %}',
+      ];
+    } else if (eventType === 'award') {
+      images = [
+        '{% static "images/award1.jpeg" %}',
+        '{% static "images/award2.jpeg" %}',
+        '{% static "images/award3.jpeg" %}',
+      ];
+    } else if (eventType === 'zonal') {
+      images = [
+        '{% static "images/zonal1.jpeg" %}',
+        '{% static "images/zonal2.jpeg" %}',
+      ];
+    }
+
+    // Dynamically create image elements and append them to the container
+    images.forEach(function (src) {
+      const div = document.createElement('div');
+      div.classList.add('image-item');
+      div.innerHTML = `<img src="${src}" alt="Event Image" onclick="showFullImage('${src}')">`;
+      imageContainer.appendChild(div);
+    });
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Disable scrolling when modal is open
+  }
+
+  // Close the modal
+  function closeGalleryModal() {
+    const modal = document.getElementById('galleryModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Enable scrolling when modal is closed
+  }
+
+  // Show the full image overlay
+  function showFullImage(imageSrc) {
+    const fullImageOverlay = document.getElementById('fullImageOverlay');
+    const fullImage = document.getElementById('fullImage');
+    fullImageOverlay.style.display = 'flex';
+    fullImage.src = imageSrc;
+  }
+
+  // Close the full image overlay
+  function closeFullImage() {
+    const fullImageOverlay = document.getElementById('fullImageOverlay');
+    fullImageOverlay.style.display = 'none';
+  }
+</script>
+
+{% endblock %}

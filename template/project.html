@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Project | Rotary Club
+{% endblock %}
+{% block main %}
+<section class="hero-wrap hero-wrap-8" style="background-image: url('static/images/projectbanner.jpg'); height: 400px"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+        </div>
+    </div>
+</section>
+
+<div class="container-fluid fade-up">
+    <h3 class="text-center p-4 fade-up" style="font-size: 40px;">Our Projects</h3>
+    <div class="container fade-up" id="pro-id">
+        <!-- Row for the accordions -->
+        <div class="row row-cols-1 row-cols-md-2 g-4 fade-up">
+            <!-- First accordion -->
+            <div class="col fade-up">
+                <div id="accordion1" class="single-project-cont h-100 fade-up">
+                    <div class="card single-project h-100 fade-up">
+                        <img class="card-img-top" src="{% static 'images/p-1.jpg' %}" alt="Project Image">
+                        <div class="card-header" id="headingOne1">
+                            <h6 class="card-title" id="p-heading">
+                                Rotary Club of Tangasseri and NS Cooperative Hospital Conduct Life-Changing Cleft Palate
+                                Surgeries for Tribal Children.
+                            </h6>
+                            <h5 class="mt-4 d-flex justify-content-center">
+                                <button class="btn btn-link collapsed btn-primary" data-toggle="collapse"
+                                    data-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1"
+                                    style="text-decoration:none">
+                                    Read..
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne1" class="collapse" aria-labelledby="headingOne1" data-parent="#accordion1">
+                            <div class="card-body" style="text-align:justify;">
+                                The Rotary Club of Tangasseri and the NS Cooperative Hospital joined hands to conduct a
+                                major Cleft Palate surgery for two children, Sumesh aged 15 years and Arshida mol aged 9
+                                years of the Achankovil tribal settlement who were identified by Dr Arun Mohan (Rotary
+                                Club of Tangasseri) at the Achankovil tribal settlement Medical Camp conducted by the
+                                Indian Medical Association, Kollam branch.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second accordion -->
+            <div class="col fade-up">
+                <div id="accordion2" class="single-project-cont h-100 fade-up">
+                    <div class="card single-project h-100 fade-up">
+                        <img class="card-img-top" src="{% static 'images/p-2.jpg' %}" alt="Project Image">
+                        <div class="card-header" id="headingOne2">
+                            <h6 class="card-title" id="p-heading">
+                                Rotary Club of Tangasseri Inaugurates $42,000 Global Grant Project "Save Kidney Save
+                                Life" with Donation of Dialysis Machines to Matha Hospital
+                            </h6>
+                            <h5 class="mt-4 d-flex justify-content-center">
+                                <button class="btn btn-link collapsed btn-primary" data-toggle="collapse"
+                                    data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2"
+                                    style="text-decoration:none">
+                                    Read..
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne2" class="collapse" aria-labelledby="headingOne2" data-parent="#accordion2">
+                            <div class="card-body" style="text-align:justify;">
+                                Rotary Club of Tangasseri when its Global Grant Project "Save Kidney Save Life" worth
+                                42,000 U.S $ was inaugurated by the District Governor Rtn Dr G.Sumithran The club
+                                donated four dialysis machines and related equipment to the Matha hospital and in return
+                                the club receives five dialysis every day totally free of cost for the patients
+                                recommended by the club for a period of five years.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second row -->
+        <div class="row row-cols-1 row-cols-md-2 g-4 mt-4 fade-up">
+            <!-- Third accordion -->
+            <div class="col fade-up">
+                <div id="accordion3" class="single-project-cont h-100 fade-up">
+                    <div class="card single-project h-100 fade-up">
+                        <img class="card-img-top" src="{% static 'images/p-3.jpg' %}" alt="Project Image">
+                        <div class="card-header" id="headingOne3">
+                            <h6 class="card-title" id="p-heading">
+                                KIMS Health Limb Centre and Rotary Club of Tangasseri Host Artificial Limb and Fitment
+                                Camp in TKM College of Arts and Science
+                            </h6>
+                            <h5 class="mt-4 d-flex justify-content-center">
+                                <button class="btn btn-link collapsed btn-primary" data-toggle="collapse"
+                                    data-target="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3"
+                                    style="text-decoration:none">
+                                    Read..
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne3" class="collapse" aria-labelledby="headingOne3" data-parent="#accordion3">
+                            <div class="card-body" style="text-align:justify;">
+                                Join us at the Artificial Limb and Fitment Camp, organized by KIMS Health Limb Centre in
+                                collaboration with the Rotary Club of Tangasseri. Transforming lives with custom
+                                prosthetics and expert care, this initiative brings hope and mobility to those in need.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth accordion -->
+            <div class="col fade-up">
+                <div id="accordion4" class="single-project-cont h-100 fade-up">
+                    <div class="card single-project h-100 fade-up">
+                        <img class="card-img-top" src="static/images/bookdonation.jpeg" alt="Project Image">
+                        <div class="card-header" id="headingOne4">
+                            <h6 class="card-title" id="p-heading">
+                                <br>
+                                Rotary Club Tangasserie Book Donation Campaign: Empowering Communities through Education
+                            </h6>
+                            <h5 class="mt-4 d-flex justify-content-center">
+                                <button class="btn btn-link collapsed btn-primary" data-toggle="collapse"
+                                    data-target="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4"
+                                    style="text-decoration:none">
+                                    Read..
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne4" class="collapse" aria-labelledby="headingOne4" data-parent="#accordion4">
+                            <div class="card-body" style="text-align:justify;">
+                                The Rotary Club Tangasserie is organizing a book donation campaign to provide
+                                educational resources to underserved communities. By donating gently used or new books,
+                                you can help enrich the lives of children and adults alike, fostering learning and
+                                growth for a brighter future.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock %}

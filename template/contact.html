@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Contact | Rotary Club
+{% endblock %}
+{% block main %}
+
+<section class="hero-wrap hero-wrap-8"
+  style="background-image: url('https://d26dp53kz39178.cloudfront.net/media/uploads/Travel_Guide_Images/Kovalam.jpg'); height: 400px"
+  data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <!-- Content -->
+    </div>
+  </div>
+</section>
+
+<br>
+<h3 class="text-center fade-up" style="font-size: 40px;">Contact Us</h3>
+
+<section class="ftco-section contact-sectionv">
+  <div class="container">
+    <div class="row d-flex mb-5 contact-info fade-up">
+      <div class="col-md-12 mb-4 fade-up">
+        <h2 class="h3 fade-up">Contact Information</h2>
+      </div>
+      <div class="w-100 fade-up"></div>
+      <div class="col-md-4 fade-up">
+        <p><span>Address:</span> <a>Rotary Club Of Thangasseri, Thangasseri, Kollam</a></p>
+      </div>
+      <div class="col-md-3 fade-up">
+        <p><span>Phone:</span> <a href="tel://1234567920">+91 85475 01092</a></p>
+      </div>
+      <div class="col-md-4 fade-up">
+        <p><span>Email:</span> <a href="mailto:rotarycluboftangasseri@gmail.com">rotarycluboftangasseri@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row block-9 fade-up">
+      <div class="col-lg-6 order-md-last d-fle fade-up">
+        <!--<form action="/contact_msge/" method="post" class="bg-light p-5 contact-form fade-up" style="height: 550px;">-->
+        <!--  {% csrf_token %}-->
+          <div class="form-group fade-up">
+            <input type="text" class="form-control fade-up" name="name" placeholder="Enter your Name" required>
+          </div>
+          <div class="form-group fade-up">
+            <input type="email" class="form-control fade-up" name="email" placeholder="Enter your Email" required>
+          </div>
+          <div class="form-group fade-up">
+            <input type="text" class="form-control fade-up" name="phone" placeholder="Enter your Phone" required>
+          </div>
+          <div class="form-group fade-up">
+            <input type="text" class="form-control fade-up" name="sub" placeholder="Enter your Subject" required>
+          </div>
+          <div class="form-group fade-up">
+            <textarea name="msg" cols="20" rows="6" class="form-control fade-up" placeholder="Enter your Message"
+              required></textarea>
+          </div>
+          <div class="form-group fade-up">
+            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5 fade-up">
+          </div>
+        </form>
+      </div>
+
+
+      <div class="col-lg-6 d-flex fade-up">
+        <div id="map" class="bg-white w-100 h-100 fade-up">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15767.670544353077!2d76.56014823496253!3d8.887249858694748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05fc3ecc33f669%3A0x6d759c414bc0818d!2sThangassery%2C%20Kollam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1726741978933!5m2!1sen!2sin"
+            width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

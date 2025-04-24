@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Uyare Register form | Rotary Club
+{% endblock %}
+{% block main %}
+<section class="hero-wrap hero-wrap-8" style="background-image: url('static/images/2149377743.jpg'); height: 400px;"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+        </div>
+    </div>
+</section>
+<br>
+<div class="container fade-up">
+    <div class="row justify-content-center fade-up">
+        <div class="col-md-6 fade-up">
+            <div class="form-container bg-light p-5 fade-up">
+                <h3 class="text-center mb-4 fade-up" style="font-size: 40px;">UYARE REGISTER FORM</h3>
+                <!--<form action="/uyare_register/" method="post">-->
+                <!--    {% csrf_token %}-->
+                    <div class="form-group">
+                        <label for="firstname"></label>
+                        <input type="text" class="form-control" id="firstname" name="firstname"
+                            placeholder="Enter your first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname"></label>
+                        <input type="text" class="form-control" id="lastname" name="lastname"
+                            placeholder="Enter your last name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age"></label>
+                        <input type="text" class="form-control" id="age" placeholder="Enter your age" name="age">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone-number"></label>
+                        <div class="input-group">
+                            <input type="tel" class="form-control" id="phone-number" name="phone_number"
+                                placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="qualification"></label>
+                        <div class="input-group">
+                            <select class="form-control" id="qualification" name="qualification" required>
+                                <option value="">Select your qualification</option>
+                                <option value="High School">High School</option>
+                                <option value="Associate Degree">Higher Secondary</option>
+                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                <option value="Bachelor's Degree">Master's Degree</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" style="padding: 15px;">Register</button>
+                    </div>
+                </form>
+                <br>
+                {% if messages %}
+                <div class="container">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<style>
+    body {
+        background-color: rgba(211, 240, 255, 0.789);
+    }
+</style>
+{% endblock %}

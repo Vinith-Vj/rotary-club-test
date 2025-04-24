@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About | Rotary Club
+{% endblock %}
+
+{% block main %}
+
+<section class="hero-wrap hero-wrap-8"
+  style="background-image: url('static/images/Thangassery_Fort.jpg'); height: 400px"
+  data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<div class="container-fluid fade-up">
+  <h1 class="mb-3 bread" style="text-align: center fade-up">About Us</h1>
+  <!-- <p class="breadcrumbs" style="text-align: center"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About Us <i class="ion-ios-arrow-forward"></i></span></p> -->
+  <div class="row justify-content-center mt-5 mb-5 fade-up " id="about-section">
+    <div class="col-sm-10 col-md-6 fade-up">
+      <img src="static/images/meetings.jpeg" id="abt-img" height="100%" width="100%">
+    </div>
+    <div class="col-sm-10 col-md-6 m-auto fade-up">
+      <p id="abt-para fade-up">
+        Rotary is a global network of 1.4 million neighbors, friends, leaders, and problem-solvers who see a world
+        where people unite and take action to create lasting change – across the globe, in our communities, and in
+        ourselves.
+        Solving real problems takes real commitment and vision. For more than 110 years, Rotary's people of action have
+        used their passion, energy, and intelligence to take action on sustainable projects. From literacy and peace to
+        water and health, we are always working to better our world, and we stay committed to the end.
+
+      </p>
+      <p>
+        We see differently: Our multidisciplinary perspective helps us see challenges in unique ways.
+
+        We think differently: We apply leadership and expertise to social issues — and find unique solutions.
+
+        We act responsibly: Our passion and perseverance create lasting change.
+
+        We make a difference at home and around the world: Our members can be found in your community and across the
+        globe.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<section class="History fade-up">
+  <h3 class="text-center m-4 fade-up" style="font-size: 40px;">History</h3>
+
+  <div class=" container inside-history fade-up">
+    <!-- Section: Timeline -->
+    <section class="py-5 fade-up">
+      <h3 class="text-center m-4 fade-up" style="font-size: 40px;">ROLL OF HONOUR</h3>
+      <ul class="timeline fade-up">
+
+        {% for g in history %}
+        <li class="timeline-item mb-5 fade-up">
+          <h5 class="fw-bold fade-up">{{g.start_year}}-{{g.end_year}}</h5>
+          <div class="c-i-c fade-up">
+            <div class="card fade-up" style="width: 13rem;">
+              <img src="{{ g.president_image.url }}" class="card-img-top fade-up" alt="..." height="200px">
+              <div class="card-body text-center fade-up">
+                <h5 class="card-title fade-up">{{g.president_name}}</h5>
+                <p class="card-text fade-up">PRESIDENT</p>
+              </div>
+            </div>
+
+            <div class="card fade-up" style="width: 13rem;">
+              <img src="{{ g.secretary_image.url }}" class="card-img-top fade-up" alt="..." height="200px">
+              <div class="card-body text-center fade-up">
+                <h5 class="card-title fade-up">{{g.secretary_name}}</h5>
+                <p class="card-text fade-up">SECRETARY</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+
+      </ul>
+    </section>
+    <!-- Section: Timeline -->
+  </div>
+</section>
+
+
+{% endblock %}
