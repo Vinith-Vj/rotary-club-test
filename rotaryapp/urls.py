@@ -29,4 +29,6 @@ urlpatterns = [
     path('uyare/', views.uyare, name='uyare'),
     
     # path('uyare_register/', views.uyare_register, name='uyare_register'),
+
+    path('events/', views.events_view, name='events'),
 ]

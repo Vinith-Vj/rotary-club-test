@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import homeCoverImage, History, Contact, Membership, Sponsor, Uyare
+from .models import homeCoverImage, History, Contact, Membership, Sponsor, Uyare, Event
 from django.shortcuts import render, redirect
 from django.contrib import messages
 # import pywhatkit as kit
@@ -253,3 +253,7 @@ def uyare(request):
 #         return redirect('rotaryapp:uyare')
 
 #     return render(request, 'uyare.html')
+
+def events_view(request):
+    events = Event.objects.all()
+    return render(request, 'events.html', {'events': events})

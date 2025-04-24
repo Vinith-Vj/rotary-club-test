@@ -14155,3 +14155,98 @@ textarea.form-control {
     font-size: 30px;
   }
 }
+
+.asap {
+  background-color: #ffc79e47;
+  padding: 20px;
+}
+
+.asap-logo {
+  height: 200px;
+}
+
+.asap-text {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.asap h4 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+
+.asap h5 {
+  font-weight: bold;
+  color: black;
+}
+
+@media (max-width: 575.98px) { /* For extra small devices */
+  .asap h4 {
+    font-size: 30px;
+  }
+  .asap h5 {
+    font-weight: unset;
+    color: black;
+  }
+}
+
+.fee-card {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.fee-card:hover {
+  transform: translateY(-5px);
+}
+
+.fee-header {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.fee-amount {
+  /* font-size: 28px; */
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0;
+}
+
+.fee-details {
+  padding: 20px;
+  display: flex;
+}
+
+.fee-mode {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #6c757d;
+}
+
+.fee-mode .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #6c757d;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.btn-apply {
+  background-color: #ffbf00;
+  color: white;
+  border-radius: 8px;
+  /* padding: 10px 20px; */
+  font-weight: 600;
+  width: 190px;
+  border: none;
+  transition: background-color 0.3s;
+  margin: 0;
+}

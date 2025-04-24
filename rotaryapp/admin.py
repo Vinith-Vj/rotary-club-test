@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import History, homeCoverImage, Contact, Membership, Sponsor, Uyare
+from .models import History, homeCoverImage, Contact, Membership, Sponsor, Uyare, Event
 
 # Register your models here.
 admin.site.register(homeCoverImage)
@@ -8,4 +8,5 @@ admin.site.register(Contact)
 admin.site.register(Membership)
 admin.site.register(Sponsor)
 admin.site.register(Uyare)
+admin.site.register(Event)
 
