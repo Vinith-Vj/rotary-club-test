@@ -14182,12 +14182,24 @@ textarea.form-control {
 }
 
 @media (max-width: 575.98px) { /* For extra small devices */
+  /* .asap {
+    margin: 10px;
+  } */
   .asap h4 {
-    font-size: 30px;
+    font-size: 25px;
   }
   .asap h5 {
     font-weight: unset;
     color: black;
+    font-size: 14px;
+  }
+
+  .asap li {
+    font-size: 13px;
+  }
+
+  .asap p {
+    font-size: 13px;
   }
 }
 
