@@ -29,8 +29,8 @@ Home | Rotary Club
                   class="p-x-3 rounded event-card d-flex flex-column align-items-center"
                   onclick="showEventDetails({{ event.id }})"
                 >
-                  <h3 class="h5 fw-semibold">{{ event.title }}</h3>
-                  <p class="small mb-0">{{ event.date }}</p>
+                  <h3 class="h5 fw-semibold" style='color: white;'>{{ event.title }}</h3>
+                  <p class="small mb-0" style='color: white;'>{{ event.date }}</p>
                 </div>
               </div>
             {% endfor %}
@@ -44,7 +44,7 @@ Home | Rotary Club
               {{ event.id }}: `
                 <h2 class="h4 fw-bold mb-3">{{ event.title }}</h2>
                 <p class="text-muted mb-2">{{ event.date }}</p>
-                <p>{{ event.description }}</p>
+                <p class="">{{ event.description }}</p>
               `,
               {% endfor %}
             };
