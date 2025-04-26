@@ -14185,6 +14185,11 @@ textarea.form-control {
   /* .asap {
     margin: 10px;
   } */
+
+  .asap-logo {
+    height: 100px;
+  }
+
   .asap h4 {
     font-size: 25px;
   }
@@ -14266,8 +14271,9 @@ textarea.form-control {
 .event-card {
   cursor: pointer;
   transition: background-color 0.2s ease;
+  background-color: black;
 }
 
-.event-card:hover {
-  background-color: #f0f0f0;
+.event-card h3, p {
+  color: white !important;
 }

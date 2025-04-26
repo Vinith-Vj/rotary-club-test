@@ -254,6 +254,9 @@ def uyare(request):
 
 #     return render(request, 'uyare.html')
 
+def essential(request):
+    return render(request, 'essential_english_skills.html')
+
 def events_view(request):
     events = Event.objects.all()
     return render(request, 'events.html', {'events': events})

@@ -30,5 +30,7 @@ urlpatterns = [
     
     # path('uyare_register/', views.uyare_register, name='uyare_register'),
 
+    path('essential/', views.essential, name='essential'),
+
     path('events/', views.events_view, name='events'),
 ]

@@ -22,15 +22,15 @@ Home | Rotary Club
 
 <section class="ftco-section testimony-section ftco-no-pt fade-up mb-6">
     <div class="container fade-up py-5">
-        <div class="row g-3">
+        <div class="row">
             {% for event in events %}
-              <div class="col-12 col-md-6">
+              <div class="col-6 col-md-3 mb-3">
                 <div
-                  class="p-3 bg-light rounded event-card"
+                  class="p-x-3 rounded event-card d-flex flex-column align-items-center"
                   onclick="showEventDetails({{ event.id }})"
                 >
                   <h3 class="h5 fw-semibold">{{ event.title }}</h3>
-                  <p class="small text-muted">{{ event.date }}</p>
+                  <p class="small mb-0">{{ event.date }}</p>
                 </div>
               </div>
             {% endfor %}
