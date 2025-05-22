@@ -13862,6 +13862,12 @@ textarea.form-control {
   }
 }
 
+@media (max-width: 575.98px) {
+  .headrow {
+    padding-top: 300px;
+  }
+}
+
 #headBanner span {
   color: #FFBF00 !important;
 }
@@ -14271,6 +14277,20 @@ textarea.form-control {
 .event-card {
   cursor: pointer;
   transition: background-color 0.2s ease;
-  background-color: black;
 }
 
+.fixed-size { /* or whatever size you want */
+  height: 300px;
+  object-fit: cover;
+}
+
+.test {
+  height: 100%;
+  width: 100%;
+  background-color: #00000054;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}

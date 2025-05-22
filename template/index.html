@@ -10,14 +10,24 @@ Home | Rotary Club
 	data-stellar-background-ratio="0.4">
 	<div class="overlay"></div>
 	<div class="container-fluid px-md-5">
-		<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
+		<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start headrow"
 			data-scrollax-parent="true">
-			<div class="col-md-6 ftco-animate">
+			<div class="col-lg-6 ftco-animate">
 				<h2 class="subheading">ROTARY CLUB</h2>
 				<h1 class="mb-4" id="headBanner"><span> Diverse</span> hearts,<br>Unified in <span>compassion</span>.
 				</h1>
 				<div>
 					<a href="{% url 'rotaryapp:joinus' %}" class="btn btn-primary" id="join">Membership Form</a>
+				</div>
+			</div>
+
+			<div class="col-lg-6 ftco-animate">
+				<div class="card text-center bg-transparent border-0" style="max-width: 400px;">
+					<div class="card-body">
+						<h5 class="card-title text-uppercase text-white">STARTING FROM 22/05/2025</h5>
+						<h1 class="display-4 fw-bold" style="color: #FFBF00;">{{ today_visits }}</h1>
+						<p class="card-text text-white">New People have visited the site till this day</p>
+					</div>
 				</div>
 			</div>
 		</div>

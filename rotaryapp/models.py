@@ -80,6 +80,21 @@ class Event(models.Model):
     title = models.CharField(max_length=200)
     date = models.DateField()
     description = models.TextField()
+    thumbnail = models.ImageField(upload_to='events/', default=1)
     
     def __str__(self):
         return f"{self.title} - {self.date}"
+    
+class EventImage(models.Model):
+    event = models.ForeignKey(Event, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='events/')
+
+    def __str__(self):
+        return f"Image for {self.event.title}"
+    
+class Visitor(models.Model):
+    ip_address = models.GenericIPAddressField()
+    visited_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.ip_address} at {self.visited_at}"

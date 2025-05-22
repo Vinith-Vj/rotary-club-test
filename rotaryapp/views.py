@@ -5,15 +5,30 @@ from django.contrib import messages
 # import pywhatkit as kit
 # import pywhatkit
 from django.http import HttpResponse
-# from django.utils.timezone import now
+from django.utils.timezone import now, localtime
 # from datetime import datetime, timedelta
 # import time
-
+from .models import Visitor
 # Create your views here.
 
 def home(request):
     cover = homeCoverImage.objects.all()
-    context = {'cover': cover}
+
+    ip = request.META.get('REMOTE_ADDR')
+    current_time = now()
+    today = localtime(current_time).date()
+
+    # Save every visit (no uniqueness)
+    Visitor.objects.create(ip_address=ip)
+
+    # Count all visits today (no filtering by IP)
+    today_visits = Visitor.objects.filter(visited_at__date=today).count()
+    
+    context = {
+        'cover': cover,
+        'today_visits': today_visits
+    }
+
     return render(request, "index.html", context)
 
 # def contactform_message(request):
